@@ -1,35 +1,48 @@
 import streamlit as st
-import numpy as np
+from nilearn import plotting, datasets
+import streamlit.components.v1 as components
 
-st.set_page_config(page_title="Brain Age Tool", page_icon="🧠")
+st.set_page_config(page_title="Brain Visualization", page_icon="🧠")
 
-# Custom CSS for the Pink Theme
+# Styling to match the Professional Pink/Times New Roman theme
 st.markdown("""
     <style>
     .stApp { background-color: #fffafa; }
-    h1, h2 { color: #ad1457; font-family: "Times New Roman", serif; }
+    h1, h2, h3 { color: #ad1457 !important; font-family: "Times New Roman", serif; }
     .stButton>button { background-color: #ad1457; color: white; border-radius: 20px; }
+    p { font-family: "Times New Roman", serif; font-size: 1.1rem; }
     </style>
     """, unsafe_allow_html=True)
 
-st.title("🧠 Brain Age Calculator")
-st.write("This is a computational demo for structural MRI analysis.")
+st.title("🧠 Neuroimaging Visualization")
+st.write("Interactive 3D Glass Brain visualization powered by Nilearn.")
 
-# Simple Interactive Demo
-age = st.number_input("Enter Chronological Age:", min_value=1, max_value=100, value=25)
-brain_volume = st.slider("Total Gray Matter Volume (liters):", 0.5, 1.5, 1.1)
+# --- GLASS BRAIN SECTION ---
+st.subheader("3D Glass Brain View")
 
-# Mock calculation for the demo
-predicted_age = age + (1.2 - brain_volume) * 10 
+# Using a standard MNI template for the glass brain
+# In the future, you can replace this with your actual FTD patient data maps
+with st.spinner("Generating 3D Brain View..."):
+    # Create the glass brain plot (interactive)
+    view = plotting.view_img(
+        datasets.load_mni152_template(), 
+        threshold=3, 
+        bg_img=None, 
+        opacity=0.2,
+        title="Interactive Glass Brain"
+    )
+    
+    # Render the interactive plot in Streamlit
+    components.html(view.get_iframe(), height=500)
 
-if st.button("Calculate Predicted Brain Age"):
-    st.success(f"Predicted Brain Age: **{predicted_age:.2f} years**")
-    diff = predicted_age - age
-    st.write(f"Brain Age Gap: {diff:+.2f} years")
+st.markdown("""
+    <div style="background:#fff0f5; padding:15px; border-radius:10px; border:1px solid #f8bbd0;">
+        <p><b>Note:</b> You can use your mouse to rotate, zoom, and click on different 
+        coordinates to see the cross-sections of the MNI152 template.</p>
+    </div>
+""", unsafe_allow_html=True)
 
-st.info("Note: This is a demo interface. The underlying model is based on structural MRI preprocessing via fMRIPrep.")
-
-# Hidden Analytics
+# Hidden Analytics Tracking
 st.components.v1.html("""
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJJJWY9LRH"></script>
     <script>
