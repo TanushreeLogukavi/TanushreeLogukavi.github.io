@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Researcher Profile | Computational Neuroscience</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Tanushree L | Computational Neuroscience</title>
     <style>
         :root {
-            --primary: #8e24aa;    /* Deep Purple-Magenta */
-            --accent: #d81b60;     /* Strong Pink */
-            --bg: #fff5f8;         /* Very Light Pink Tint */
-            --text: #311b92;       /* Dark Navy/Purple Text */
-                }
+            /* Professional Pink Palette */
+            --primary: #ad1457;    /* Deep Raspberry */
+            --accent: #f06292;     /* Professional Rose Pink */
+            --bg: #fffafa;         /* Snow/White with a hint of rose */
+            --text: #2d2d2d;       /* Professional Charcoal */
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
+            /* Setting Typography to Times New Roman */
+            font-family: "Times New Roman", Times, serif;
             line-height: 1.6;
             color: var(--text);
             background-color: var(--bg);
@@ -23,7 +25,7 @@
 
         /* Navigation */
         nav {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             padding: 1rem 10%;
             display: flex;
             justify-content: space-between;
@@ -32,22 +34,35 @@
             width: 80%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         nav a {
             text-decoration: none;
             color: var(--primary);
-            font-weight: 600;
+            font-weight: bold;
             margin-left: 20px;
+            font-size: 1.1rem;
         }
 
-        /* Hero Section */
+        /* Stand-out Header with Magenta/Pink Gradient */
         header {
-            background: var(--primary);
+            background: linear-gradient(135deg, #ad1457 0%, #d81b60 50%, #ec407a 100%);
             color: white;
-            padding: 120px 10% 60px;
+            padding: 140px 10% 80px;
             text-align: center;
+            box-shadow: inset 0 -5px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.4rem;
+            opacity: 0.9;
         }
 
         .container {
@@ -58,10 +73,11 @@
 
         .card {
             background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(173, 20, 87, 0.08); /* Subtle pink shadow */
             margin-bottom: 30px;
+            border-left: 5px solid var(--primary);
         }
 
         h2 {
@@ -69,6 +85,7 @@
             border-bottom: 2px solid var(--accent);
             display: inline-block;
             margin-bottom: 20px;
+            font-size: 1.8rem;
         }
 
         /* Research Interests Grid */
@@ -79,39 +96,53 @@
         }
 
         .interest-item {
-            background: #eef2f3;
-            padding: 15px;
-            border-radius: 5px;
+            background: #fff0f5; /* Lavender Blush */
+            padding: 20px;
+            border-radius: 8px;
             text-align: center;
+            border: 1px solid #f8bbd0;
+        }
+
+        .interest-item strong {
+            color: var(--primary);
+            font-size: 1.2rem;
         }
 
         footer {
             text-align: center;
-            padding: 40px;
-            color: #777;
-            font-size: 0.9rem;
+            padding: 60px 40px;
+            color: #888;
+            font-size: 1rem;
+            border-top: 1px solid #eee;
         }
 
         /* Buttons */
         .btn {
-            background: var(--accent);
+            background: var(--primary);
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 25px;
+            border-radius: 30px;
             text-decoration: none;
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div style="font-size: 1.2rem; font-weight: bold;">Tanushree L</div>
+        <div style="font-size: 1.4rem; font-weight: bold; color: var(--primary);">Tanushree L</div>
         <div>
             <a href="#about">About</a>
             <a href="#research">Research</a>
-            <a href="#publications">Publications</a>
+            <a href="#publications">Projects</a>
         </div>
     </nav>
 
@@ -124,7 +155,7 @@
         
         <section id="about" class="card">
             <h2>About Me</h2>
-            <p>
+            <p style="font-size: 1.1rem;">
                 I am a researcher focused on the intersection of mathematical modeling and clinical neuroscience. 
                 My work currently involves analyzing neuroimaging data and 
                 developing personalized stimulation protocols.
@@ -151,17 +182,19 @@
 
         <section id="publications" class="card">
             <h2>Current Projects</h2>
-            <ul>
-                <li><strong>fMRIPrep Pipeline Optimization:</strong> Developing automated scripts for preprocessing large-scale neuroimaging datasets.</li>
+            <ul style="font-size: 1.1rem;">
+                <li style="margin-bottom: 15px;"><strong>fMRIPrep Pipeline Optimization:</strong> Developing automated scripts for preprocessing large-scale neuroimaging datasets.</li>
                 <li><strong>Personalized tDCS in FTD:</strong> Calculating individual dosage to improve clinical outcomes in dementia patients.</li>
             </ul>
-            <a href="https://github.com/yourusername" class="btn">View My GitHub Repos</a>
+            <center>
+                <a href="https://github.com/yourusername" class="btn">View My GitHub Repos</a>
+            </center>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 </p>
+        <p>&copy; 2026 Tanushree L | Built with GitHub Pages</p>
     </footer>
 
 </body>
