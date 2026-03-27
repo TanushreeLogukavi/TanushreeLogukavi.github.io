@@ -1,10 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Researcher Profile | Computational Neuroscience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #f4f7f6;
+            --text: #333;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 80%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            margin-left: 20px;
+        }
+
+        /* Hero Section */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 120px 10% 60px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Research Interests Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .interest-item {
+            background: #eef2f3;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Buttons */
+        .btn {
+            background: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to my GitHub Page</h1>
-    <p>I am a researcher working on computational neuroscience.</p>
+
+    <nav>
+        <div style="font-size: 1.2rem; font-weight: bold;">Researcher Name</div>
+        <div>
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Aspiring Computational Neuroscientist</h1>
+        <p>MSc Mathematics | JRF at NIMHANS</p>
+    </header>
+
+    <div class="container">
+        
+        <section id="about" class="card">
+            <h2>About Me</h2>
+            <p>
+                I am a researcher focused on the intersection of mathematical modeling and clinical neuroscience. 
+                My work currently involves analyzing neuroimaging data to better understand brain aging and 
+                developing personalized stimulation protocols.
+            </p>
+        </section>
+
+        <section id="research" class="card">
+            <h2>Research Interests</h2>
+            <div class="grid">
+                <div class="interest-item">
+                    <strong>Brain Age Modeling</strong>
+                    <p>Machine learning approaches to structural MRI.</p>
+                </div>
+                <div class="interest-item">
+                    <strong>tDCS Optimization</strong>
+                    <p>Personalized dose calculation using iSATA.</p>
+                </div>
+                <div class="interest-item">
+                    <strong>Dementia Research</strong>
+                    <p>Investigating FTD through fMRI/DTI analysis.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="card">
+            <h2>Current Projects</h2>
+            <ul>
+                <li><strong>fMRIPrep Pipeline Optimization:</strong> Developing automated scripts for preprocessing large-scale neuroimaging datasets.</li>
+                <li><strong>Personalized tDCS in FTD:</strong> Calculating individual dosage to improve clinical outcomes in dementia patients.</li>
+            </ul>
+            <a href="https://github.com/yourusername" class="btn">View My GitHub Repos</a>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 | Built with GitHub Pages</p>
+    </footer>
+
 </body>
 </html>
