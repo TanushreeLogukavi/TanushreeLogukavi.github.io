@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJJJWY9LRH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CJJJWY9LRH');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tanushree L's portfolio: mathematics, computational neuroscience, neuroimaging, and personalized treatment.">
+    <title>Tanushree L | Portfolio</title>
+    <style>
+        :root {
+            --bg: #f6f1ea;
+            --bg-soft: #fffaf4;
+            --surface: rgba(255, 255, 255, 0.84);
+            --surface-strong: #ffffff;
+            --text: #16212b;
+            --muted: #5f6b76;
+            --primary: #7a1e32;
+            --primary-deep: #4d1221;
+            --accent: #bb6b2f;
+            --accent-soft: #e9c9ad;
+            --border: rgba(73, 41, 28, 0.12);
+            --shadow: 0 24px 60px rgba(38, 25, 18, 0.12);
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(187, 107, 47, 0.16), transparent 30%),
+                radial-gradient(circle at top right, rgba(122, 30, 50, 0.12), transparent 28%),
+                linear-gradient(180deg, #fcf8f3 0%, var(--bg) 42%, #f8f3ed 100%);
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.6;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.022) 1px, transparent 1px);
+            background-size: 42px 42px;
+            mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 85%);
+            opacity: 0.55;
+        }
+
+        a { color: inherit; }
+
+        .page {
+            position: relative;
+            z-index: 1;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            backdrop-filter: blur(18px);
+            background: rgba(250, 244, 236, 0.8);
+            border-bottom: 1px solid rgba(73, 41, 28, 0.08);
+        }
+
+        .topbar-inner,
+        .section,
+        .footer-inner {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .topbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 0;
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .brand strong {
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .brand span {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: flex-end;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--primary-deep);
+            font-size: 0.95rem;
+            padding: 8px 10px;
+            border-radius: 999px;
+        }
+
+        .nav a:hover {
+            background: rgba(122, 30, 50, 0.08);
+        }
+
+        .hero {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 56px 0 24px;
+        }
+
+        .hero-panel {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            box-shadow: var(--shadow);
+            background:
+                linear-gradient(135deg, rgba(122, 30, 50, 0.96), rgba(77, 18, 33, 0.96)),
+                linear-gradient(135deg, #651e2f 0%, #2a1216 100%);
+            color: #fffaf6;
+            padding: 40px clamp(22px, 4vw, 48px);
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.9fr);
+            gap: 28px;
+        }
+
+        .hero-panel::after {
+            content: "";
+            position: absolute;
+            inset: auto -10% -22% auto;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(238, 204, 170, 0.28), rgba(238, 204, 170, 0.02) 65%, transparent 72%);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            color: #f8e9dc;
+            font-size: 0.92rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            margin: 18px 0 12px;
+            font-size: clamp(2.8rem, 7vw, 5.4rem);
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+        }
+
+        .hero p {
+            margin: 0;
+            max-width: 62ch;
+            font-size: 1.05rem;
+            color: rgba(255, 248, 242, 0.88);
+        }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            border-radius: 999px;
+            padding: 12px 18px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+
+        .button.primary {
+            background: #fffaf6;
+            color: var(--primary-deep);
+        }
+
+        .button.secondary {
+            border: 1px solid rgba(255, 250, 246, 0.32);
+            color: #fffaf6;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .hero-card {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 250, 244, 0.12);
+            border: 1px solid rgba(255, 250, 244, 0.18);
+            border-radius: 24px;
+            padding: 22px;
+            align-self: end;
+            display: grid;
+            gap: 16px;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .stat {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            padding: 14px;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 1.4rem;
+            margin-bottom: 4px;
+        }
+
+        .stat span {
+            color: rgba(255, 248, 242, 0.8);
+            font-size: 0.92rem;
+        }
+
+        .section {
+            padding: 22px 0 0;
+        }
+
+        .card {
+            background: var(--surface);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(73, 41, 28, 0.1);
+            border-radius: 28px;
+            box-shadow: 0 18px 40px rgba(44, 30, 20, 0.08);
+            padding: 28px;
+            margin-bottom: 18px;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .section-head h2 {
+            margin: 0;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            letter-spacing: -0.02em;
+        }
+
+        .section-head p {
+            margin: 0;
+            color: var(--muted);
+            max-width: 56ch;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .stack {
+            display: grid;
+            gap: 12px;
+        }
+
+        .pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 9px 13px;
+            border-radius: 999px;
+            background: var(--bg-soft);
+            border: 1px solid rgba(73, 41, 28, 0.08);
+            color: var(--primary-deep);
+            font-size: 0.94rem;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 16px;
+        }
+
+        .timeline-item {
+            padding-left: 18px;
+            border-left: 2px solid rgba(122, 30, 50, 0.2);
+        }
+
+        .timeline-item h3,
+        .mini-card h3 {
+            margin: 0 0 6px;
+            font-size: 1.08rem;
+        }
+
+        .timeline-item .meta,
+        .mini-card .meta {
+            color: var(--accent);
+            font-size: 0.92rem;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .timeline-item p,
+        .mini-card p {
+            margin: 8px 0 0;
+            color: var(--muted);
+        }
+
+        .mini-card {
+            background: var(--surface-strong);
+            border: 1px solid rgba(73, 41, 28, 0.08);
+            border-radius: 22px;
+            padding: 18px;
+        }
+
+        .link-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .link-card {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            background: var(--primary);
+            color: #fffaf6;
+            border-radius: 16px;
+            padding: 12px 16px;
+            font-weight: 700;
+        }
+
+        .link-card.alt {
+            background: transparent;
+            color: var(--primary-deep);
+            border: 1px solid rgba(73, 41, 28, 0.14);
+        }
+
+        .footer {
+            padding: 30px 0 40px;
+            color: var(--muted);
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 14px;
+            border-top: 1px solid rgba(73, 41, 28, 0.1);
+            padding-top: 18px;
+        }
+
+        @media (max-width: 900px) {
+            .hero-panel,
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding-top: 28px;
+            }
+
+            .hero-panel {
+                border-radius: 24px;
+            }
+
+            .card {
+                padding: 22px;
+                border-radius: 22px;
+            }
+
+            .section-head {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header class="topbar">
+            <div class="topbar-inner">
+                <div class="brand">
+                    <strong>Tanushree L</strong>
+                    <span>Mathematics, neuroscience, and personalized treatment</span>
+                </div>
+                <nav class="nav" aria-label="Primary">
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#research">Research</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-panel">
+                    <div>
+                        <span class="eyebrow">Junior Research Fellow at NIMHANS</span>
+                        <h1>Turning mathematical thinking into tools for brain research.</h1>
+                        <p>
+                            I am Tanushree L, a mathematics graduate working in computational neuroscience and neuroimaging.
+                            My work focuses on personalized treatment, tDCS analysis, brain-network modeling, and building practical Python and MATLAB tools that support clinical research.
+                        </p>
+                        <div class="cta-row">
+                            <a class="button primary" href="#contact">Get in touch</a>
+                            <a class="button secondary" href="#research">View research highlights</a>
+                        </div>
+                    </div>
+
+                    <aside class="hero-card" aria-label="Profile highlights">
+                        <div class="stat-grid">
+                            <div class="stat">
+                                <strong>MSc</strong>
+                                <span>Mathematics, Avinashilingam Institute</span>
+                            </div>
+                            <div class="stat">
+                                <strong>JRF</strong>
+                                <span>NIMHANS, NI&IR</span>
+                            </div>
+                            <div class="stat">
+                                <strong>Python</strong>
+                                <span>ML, visualization, analysis</span>
+                            </div>
+                            <div class="stat">
+                                <strong>tDCS</strong>
+                                <span>Personalized neurostimulation research</span>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <section id="about" class="section">
+                <article class="card">
+                    <div class="section-head">
+                        <h2>About</h2>
+                        <p>A concise summary of the story behind the CV and cover letter.</p>
+                    </div>
+                    <div class="grid-2">
+                        <div>
+                            <p>
+                                My background started in mathematics and moved toward computational neuroscience through research at NIMHANS.
+                                That path shaped a practical interest in how quantitative methods can support personalized medicine, brain-age modeling, and clinical decision-making.
+                            </p>
+                            <p>
+                                I enjoy work that sits between theory and application: analyzing neuroimaging data, building reusable software, and translating research questions into robust computational workflows.
+                            </p>
+                        </div>
+                        <div class="stack">
+                            <div class="mini-card">
+                                <div class="meta">Current role</div>
+                                <h3>Junior Research Fellow</h3>
+                                <p>Department of Neuroimaging and Interventional Radiology, NIMHANS.</p>
+                            </div>
+                            <div class="mini-card">
+                                <div class="meta">Focus</div>
+                                <h3>Personalized treatment research</h3>
+                                <p>tDCS analysis, neuroimaging, brain networks, and applied machine learning.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section id="experience" class="section">
+                <article class="card">
+                    <div class="section-head">
+                        <h2>Experience</h2>
+                        <p>Selected roles and research experience drawn from the CV.</p>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="meta">2024 - Present</div>
+                            <h3>Junior Research Fellow, NIMHANS</h3>
+                            <p>
+                                Working in the AI4BNT lab under Dr. Rajan Kashyap on data collection, tDCS dose modeling, neuroimaging analysis, and toolbox development in Python and MATLAB.
+                            </p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="meta">2023</div>
+                            <h3>FOSSEE Summer Fellow, IIT Bombay</h3>
+                            <p>
+                                Published mathematical modeling projects using GeoGebra and built experience presenting technical work in a structured research environment.
+                            </p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="meta">Research exposure</div>
+                            <h3>Clinical and computational work</h3>
+                            <p>
+                                Contributed to longitudinal brain-network analysis, patient assessment workflows, and ongoing research around brain-age modeling and personalized treatment.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section id="research" class="section">
+                <article class="card">
+                    <div class="section-head">
+                        <h2>Research & Projects</h2>
+                        <p>Areas that reflect the portfolio's technical and scientific direction.</p>
+                    </div>
+                    <div class="grid-3">
+                        <div class="mini-card">
+                            <div class="meta">Tooling</div>
+                            <h3>iSATA / i-SATA</h3>
+                            <p>Contributed to toolbox creation and upgrades for network-level tDCS analysis in Python and MATLAB.</p>
+                        </div>
+                        <div class="mini-card">
+                            <div class="meta">Modeling</div>
+                            <h3>Brain-age and network analysis</h3>
+                            <p>Work centered on Gaussian Process Regression, longitudinal evaluation, and clinically relevant network metrics.</p>
+                        </div>
+                        <div class="mini-card">
+                            <div class="meta">Earlier project</div>
+                            <h3>FFT-based smart watch algorithm</h3>
+                            <p>MSc thesis work on an algorithm for supportive technology for disabled users.</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section id="skills" class="section">
+                <article class="card">
+                    <div class="section-head">
+                        <h2>Skills</h2>
+                        <p>A practical stack for research, analysis, and reproducible tools.</p>
+                    </div>
+                    <div class="pill-list" aria-label="Skills list">
+                        <span class="pill">Python</span>
+                        <span class="pill">MATLAB</span>
+                        <span class="pill">Linux</span>
+                        <span class="pill">GeoGebra</span>
+                        <span class="pill">Machine Learning</span>
+                        <span class="pill">Deep Learning</span>
+                        <span class="pill">fMRI</span>
+                        <span class="pill">MRI</span>
+                        <span class="pill">DTI</span>
+                        <span class="pill">DSI Studio</span>
+                        <span class="pill">Neuroimaging</span>
+                        <span class="pill">Data analysis</span>
+                        <span class="pill">Workflow automation</span>
+                    </div>
+                </article>
+            </section>
+
+            <section class="section">
+                <article class="card">
+                    <div class="section-head">
+                        <h2>Education & Highlights</h2>
+                        <p>Academic background, certifications, and a few personal details from the CV.</p>
+                    </div>
+                    <div class="grid-2">
+                        <div class="stack">
+                            <div class="mini-card">
+                                <div class="meta">2024</div>
+                                <h3>MSc Mathematics</h3>
+                                <p>Avinashilingam Institute, Coimbatore. First Class, 68%.</p>
+                            </div>
+                            <div class="mini-card">
+                                <div class="meta">2022</div>
+                                <h3>BSc Mathematics</h3>
+                                <p>Avinashilingam Institute, Coimbatore. First Class, 78%.</p>
+                            </div>
+                        </div>
+                        <div class="stack">
+                            <div class="mini-card">
+                                <div class="meta">Certifications</div>
+                                <h3>Computational neuroscience and ML foundations</h3>
+                                <p>Computational Neuroscience Summer School at Ulster University and Mathematics for Machine Learning via Coursera/Imperial College London.</p>
+                            </div>
+                            <div class="mini-card">
+                                <div class="meta">Personal note</div>
+                                <h3>Creative and athletic interests</h3>
+                                <p>Poetry publication, an anthology book, and long-distance cycling reflect the broader profile behind the research work.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section id="contact" class="section">
+                <article class="card">
+                    <div class="section-head">
+                        <h2>Contact</h2>
+                        <p>Quick links to the original documents and public profile.</p>
+                    </div>
+                    <div class="link-row">
+                        <a class="link-card" href="AI-2026-03_CV_Tanushree_L.pdf">Download CV</a>
+                        <a class="link-card alt" href="AI-2026-03_CL_Tanushree_L.pdf">Read cover letter</a>
+                        <a class="link-card alt" href="https://github.com/TanushreeLogukavi">GitHub</a>
+                        <a class="link-card alt" href="mailto:tanushreelogukavi@gmail.com">tanushreelogukavi@gmail.com</a>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-inner">
+                <span>&copy; 2026 Tanushree L</span>
+                <span>Portfolio built from the CV and cover letter in this repository.</span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
